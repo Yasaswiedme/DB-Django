@@ -7,13 +7,13 @@ from django.contrib import messages
 def read(request):
     students=[]
     mydb=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="myrce"
+    host="db.c1eg48sc6wt0.ap-south-1.rds.amazonaws.com",
+    user="DB",
+    password="Db.1234567",
+    database="DB"
     )
     mycursor=mydb.cursor()
-    mycursor.execute("select * from reg")
+    mycursor.execute("select * from ssv")
     myresult=mycursor.fetchall()
 
     for x in myresult:
@@ -38,7 +38,7 @@ def delete(request,uname):
         # Assuming you're passing the ID of the record you want to delete via POST
         uname = request.POST.get('username')
         # Execute SQL query to delete the record with the given ID
-        mycursor.execute("DELETE FROM reg WHERE username = %s", (uname,))
+        mycursor.execute("DELETE FROM ssv WHERE username = %s", (uname,))
         mydb.commit()
         return redirect('read')  # Redirect to the read function after deletion
     else:
