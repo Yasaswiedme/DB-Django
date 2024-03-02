@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Gender</th>
+            <th>Branch</th>
+            <th>Address</th>
+            <th>operations</th>
+        </tr>
+        {% for x in studentsinfo %}
+        <tr>
+            <td> {{x.username}} </td>
+            <td> {{x.password}} </td>
+            <td> {{x.gender}} </td>
+            <td> {{x.branch}} </td>
+            <td> {{x.address}} </td>
+            <td> <button><a href="{% url 'editstudent' x.username %}">edit</a></button></td>
+            <td> <button><a href="{% url 'delete' x.username %}">delete</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div>
+        <h5> <a href="{% url 'add_student' %}"> Add Student</a></h5>
+    </div>  
+</body>
+</html>

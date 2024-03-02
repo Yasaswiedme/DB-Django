@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Register Here</h2>
+    <form id="f2" action="editstudent" method="post">
+      {% csrf_token %}
+        <div class="form_settings">
+        <p><span>User Name</span><input type="text" id="username" name="username" /></p>
+        <p><span>Password</span><input type="password" id="pwd" name="pwd" /></p>
+        <p><span>Gender</span>
+          <select id="gender" name="gender">
+              <option>Male</option>
+              <option>Female</option>
+          </select>
+        </p>
+        <p><span>Branch</span>
+          <select id="branch" name="branch">
+              <option>CSE</option>
+              <option>AIML</option>
+              <option>ECE</option>
+              <option>AIDS</option>
+          </select>
+        </p>
+        <p><span>Address</span><textarea rows="8" cols="50" id="address" name="address"></textarea></p>
+        <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="register" id="register" value="Register" /></p>
+        
+      </div>
+    </form> 
+</body>
+</html>
